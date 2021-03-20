@@ -1,0 +1,12 @@
+<app-modal title="{{modalTitle}}" showClose="true" tooltip="{{ 'tooltip.removemodal' | translate }}">
+  <div class="d-flex justify-content-center" style="padding-bottom: 3em;">
+    <div *ngIf="error == undefined">{{message}}</div>
+    <div *ngIf="error != undefined" style="color: red">{{error}}</div>
+  </div>
+
+  <div class="modal-footer">
+    <button *ngIf="error == undefined" type="button" class="btn btn-success btn-md"
+      (click)="confirm(true)">{{ 'yes'  | translate }}</button>
+    <button type="button" class="btn btn-danger btn-md" (click)="confirm(false)">{{closeButton}}</button>
+  </div>
+</app-modal>

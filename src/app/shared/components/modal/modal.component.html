@@ -1,0 +1,18 @@
+<div class="modal-content">
+  <div class="card">
+    <div class="modal-header-mod">
+      <app-title-page title="{{title}}" tooltip="{{tooltip}}"></app-title-page>
+      <div *ngIf="showCloseBool" id="closeId">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          (click)="this.modalService.dismissAll()" #modalWindow>
+          <span aria-hidden="true" style="color: grey">&times;</span>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body-mod">
+      <div class="card-body-mod">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

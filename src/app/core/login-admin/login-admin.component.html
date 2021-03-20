@@ -1,0 +1,44 @@
+<div class="abc" style="background-color: blue !important;">
+  <div>
+    <a class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div *ngIf="!loggedIn" class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <form [formGroup]="form" (ngSubmit)="login()">
+            <!--<h1>{{ 'login.admintitle' | translate }}</h1>-->
+            <img src="../../../assets/img/logo-small.png" class="card-img-absolute" alt="circle-image" height="100em"/>
+            <br><br>
+            <div>
+              <input type="text" class="form-control" placeholder="{{ 'user.username' | translate }}"
+                formControlName="username" autocomplete="off" />
+            </div>
+            <div>
+              <input type="password" class="form-control" placeholder="{{ 'user.password' | translate }}"
+                formControlName="password" autocomplete="off" />
+            </div>
+            <div>
+              <input type="text" class="form-control" placeholder="{{ 'user.tenantid' | translate }}"
+                formControlName="tenantId" autocomplete="off" />
+            </div>
+            <p *ngIf="error" id="error" class="form-text" style="color: red">
+              {{ 'login.error.invalidcredentials' | translate }}</p>
+            <div>
+              <button type="submit" class="btn btn-primary">{{ 'login.login' | translate }}</button>
+              <!--<a class="reset_pass" (click)="resetPassword()">{{ 'login.lostpassword' | translate }}</a> -->
+            </div>
+            <div class="clearfix"></div>
+            <div class="separator">
+              <div class="clearfix"></div>
+              <br />
+              <div>
+                <p>{{ 'login.therms' | translate }}</p>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

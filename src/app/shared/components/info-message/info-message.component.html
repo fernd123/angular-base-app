@@ -1,0 +1,9 @@
+<app-modal title="{{modalTitle}}" showClose="true" tooltip="{{ 'tooltip.sendalertmessage' | translate }}">
+  <div class="d-flex justify-content-center" style="padding-bottom: 3em;">
+    <div *ngIf="error == undefined" style="white-space: pre-line">{{message}}</div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger btn-md" (click)="confirm()">{{closeButton}}</button>
+  </div>
+</app-modal>
